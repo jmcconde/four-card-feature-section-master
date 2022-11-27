@@ -1,0 +1,217 @@
+:root {
+    --clr-red: hsl(0, 78%, 62%);
+    --clr-cyan: hsl(180, 62%, 55%);
+    --clr-orange: hsl(34, 97%, 64%);
+    --clr-blue: hsl(212, 86%, 64%);
+    --clr-darkBlue: hsl(234, 12%, 34%);
+    --clr-greyishBlue: hsl(229, 6%, 66%);
+    --clr-lightGrey: hsl(0, 0%, 98%);
+
+    --fw-light: 200;
+    --fw-regular: 400;
+    --fw-bold: 600;
+
+    --ff-regular: 'Poppins', sans-serif;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  /* height: 100%; */
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+body {
+    background-color: var(--clr-lightGrey);
+    font-family: var(--ff-regular);
+    padding: 4rem 1.8rem;
+    color: var(--clr-greyishBlue);
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.card {
+    background-color: #fff;
+    padding: 1.8rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+    max-width: 360px;
+    min-height: 200px;
+}
+
+.card-title {
+    color: var(--clr-darkBlue);
+    font-size: 1.2rem;
+}
+
+.card-description {
+    font-size: .8rem;
+}
+
+.card-icon {
+    align-self: flex-end;
+    width: 48px;
+    height: 48px;
+    margin-top: auto;
+}
+
+.card-supervisor {
+    border-top: 4px solid var(--clr-cyan);
+}
+
+.card-teambuilder {
+    border-top: 4px solid var(--clr-red);
+}
+
+.card-karma {
+    border-top: 4px solid var(--clr-orange);
+}
+
+.card-calculator {
+    border-top: 4px solid var(--clr-blue);
+}
+
+.header {
+    text-align: center;
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    margin-bottom: 4rem;
+}
+
+.hero-title {
+    color: var(--clr-darkBlue);
+    font-weight: var(--fw-light);
+    font-size: 1.4rem;
+}
+
+.bold {
+    font-weight: var(--fw-bold);
+    color: var(--clr-darkBlue);
+}
+
+.hero-description {
+    font-weight: var(--fw-regular);
+    font-size: .85rem;
+    line-height: 1.6;
+}
+
+@media(min-width: 769px) {
+
+    .card {
+        min-height: 240px;
+    }
+
+    .cards {
+        padding: 0 1rem;
+        display: grid;
+        gap: 0;
+        grid-template-areas: "supervisor teambuilder calculator"
+                            "supervisor karma calculator";
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .card-supervisor {
+        grid-area: supervisor;
+    }
+    
+    .card-teambuilder {
+        grid-area: teambuilder;
+        margin: 0 auto;
+    }
+    
+    .card-karma {
+        grid-area: karma;
+        margin: 0 auto;
+    }
+    
+    .card-calculator {
+        grid-area: calculator;
+        justify-self: start;
+    }
+
+    .card-title {
+        font-size: 1.4rem;
+    }
+
+    .card-description {
+        font-size: .95rem;
+    }
+
+    .card-icon {
+        width: 64px;
+        height: 64px;
+    }
+
+    .header {
+        max-width: 60rem;
+        margin: 0 auto;
+        margin-bottom: 4rem;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    .hero-description {
+        font-size: 1.2rem;
+    }
+
+}
+
+@media(min-width: 1230px) {
+    cards {
+        padding: 0 6rem;
+    }
+}
